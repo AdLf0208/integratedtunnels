@@ -1,0 +1,49 @@
+id = "integratedtunnels"
+kind = "native-mod"
+name = "integratedtunnels"
+summary = "A Horizon port of integratedtunnels."
+description = """
+A port of [integratedtunnels](CyclopsMC/IntegratedTunnels) for Horizon.
+
+**Implemented so far**
+
+- An **Item Importer** part on a tunnel cable face pulls items out of the inventory
+- behind that face into the cable network's slotless item store at the jar's rate
+- (64 items per part per tick), an **Item Exporter** part on another cable face
+- hands them into the inventory behind *its* face, and the cable's
+- `/integratedtunnels info` readout shows the parts, the store and the status. It
+- is upstream's `import_all_items`/`exporter_item` pair without the variable-card
+- `integratedtunnels:tunnel_cable`** — a 4 px non-occluding core (hardness
+- ), six `part_<face>` enum properties (`none|importer_item|exporter_item`),
+
+**Not yet ported**
+
+- the **variable/aspect layer**: variable cards, the aspect selection GUI, and
+- the other six item aspects (integer count, slot index, itemstack, list,
+- predicate, NBT) — the whole point of the mod's "advanced" behaviour;
+- the **fluid and energy** parts and the fluid/energy network channels;
+- the **world parts** (`importer/exporter_world_item|fluid|energy|block`) and
+- the block break/place handlers (the `ExtendedFakePlayer`, the
+- `dummy_pickaxe`);
+- the **interface** parts (item/fluid/energy and their filtering variants) and
+
+Original copyright and licence notices are kept in this repository. Pinned to
+Horizon 1d63e0a and horizon-mixins 5a64af93. Help with the remaining slices is
+welcome.
+"""
+authors = ["AdLf0208"]
+owners = ["AdLf0208"]
+owner_ids = [107615167]
+license = "MIT"
+source = "https://github.com/AdLf0208/integratedtunnels"
+icon = "icons/integratedtunnels.png"
+categories = ["utility"]
+tags = ["port", "horizon"]
+
+[[versions]]
+version = "0.1.0"
+published = "2026-11-10"
+game = "26.3"
+file = "integratedtunnels.hnmod"
+sha256 = "0c8bcfe277ef4a179a3291ee68812598bb57ced74463594e5545a98fa5f8e99a"
+changelog = "First release"

@@ -1,0 +1,128 @@
+[mod]
+id = "integratedtunnels"
+version = "0.1.0"
+priority = 100
+
+[compatibility]
+horizon_revision = "1d63e0a5a37a7a708eb0b32b49bf0dfeb28ed8a9"
+
+# The pure tunnel model (standalone crate lib, injected as
+# `crate::game::integratedtunnels`): the six part slots, the connected network,
+# the slotless item store and the per-tick import/export moves.
+[[module]]
+id = "runtime"
+file = "crates/horizon-client/src/game.rs"
+name = "integratedtunnels"
+source = "runtime.rs"
+
+# Game-side glue: the tunnel cable block entity, the per-tick network run, the
+# part placement and the `/integratedtunnels` harness commands.
+[[module]]
+id = "state"
+file = "crates/horizon-client/src/game.rs"
+name = "integratedtunnels_state"
+source = "support.rs"
+
+# The content half is inside this bundle (`data/integratedtunnels-content.hmod`, the built
+# `content/integratedtunnels.hmod`): this writes it to `.horizon-cache/` and appends it to the
+# dev-mod list, so one `.hnmod` installs the carrier block and the two part items. The registry
+# keeps one file per project, so a split port could not be listed; AE2 ships the same pattern.
+[[injection]]
+id = "embedded-content"
+kind = "HEAD"
+cancellable = true
+target = "horizon_client::game::mods::content_root"
+helper = "embedded_content.rs"
+bindings = [
+  { name = "root", ty = "&std::path::Path", value = "root" },
+  { name = "enabled", ty = "&std::collections::BTreeSet<String>", value = "enabled" },
+  { name = "dev", ty = "&[std::path::PathBuf]", value = "dev" },
+]
+
+# A placed tunnel cable gets a block entity for the network's item store (API 15).
+[[injection]]
+id = "block-entity"
+hook = "block_entity"
+hook_version = 1
+kind = "HEAD"
+helper = "block_entity.rs"
+bindings = [
+  { name = "block", ty = "&str", value = "block" },
+  { name = "entity", ty = "&mut Option<(String, horizon_world::nbt::Compound)>", value = "entity" },
+]
+
+# ... and ticks on the server (API 15).
+[[injection]]
+id = "block-entity-ticks"
+hook = "block_entity_ticks"
+hook_version = 1
+kind = "HEAD"
+helper = "block_entity_ticks.rs"
+bindings = [
+  { name = "block", ty = "&str", value = "block" },
+  { name = "ticks", ty = "&mut bool", value = "ticks" },
+]
+
+# The cable's own tick queues it for the level tick's end (API 15).
+[[injection]]
+id = "block-entity-tick"
+hook = "block_entity_tick"
+hook_version = 1
+kind = "HEAD"
+helper = "block_entity_tick.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "pos", ty = "[i32; 3]", value = "pos" },
+  { name = "entity", ty = "&horizon_client::containers::ModBlockEntity", value = "entity" },
+]
+
+# End of the level tick: run every queued cable network's transfers, which is
+# where the container helpers (API 48) and the block-entity writes happen (API 23).
+[[injection]]
+id = "level-tick-post"
+hook = "level_tick_post"
+hook_version = 1
+kind = "HEAD"
+helper = "level_tick.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "dimension", ty = "&str", value = "dimension" },
+]
+
+# Right-clicking a cable face with a part item places it on that face (API 21).
+[[injection]]
+id = "right-click-block"
+hook = "right_click_block"
+hook_version = 1
+kind = "HEAD"
+helper = "right_click.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "pos", ty = "[i32; 3]", value = "pos" },
+  { name = "face", ty = "[i32; 3]", value = "face" },
+  { name = "canceled", ty = "&mut bool", value = "canceled" },
+]
+
+# `/integratedtunnels info|part` (API 8).
+[[injection]]
+id = "register-commands"
+hook = "register_commands"
+hook_version = 1
+kind = "HEAD"
+helper = "register_commands.rs"
+bindings = [
+  { name = "commands", ty = "&mut Vec<NativeCommand>", value = "commands" },
+]
+
+[[injection]]
+id = "perform-command"
+hook = "perform_command"
+hook_version = 1
+kind = "HEAD"
+helper = "perform_command.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "player", ty = "&NativeServerPlayer", value = "player" },
+  { name = "command", ty = "&str", value = "command" },
+  { name = "ran", ty = "&mut bool", value = "ran" },
+]

@@ -1,0 +1,8 @@
+{
+  "block.integratedtunnels.tunnel_cable": "Tunnel Cable",
+  "item.integratedtunnels.part_exporter_item": "Item Exporter",
+  "item.integratedtunnels.part_importer_item": "Item Importer",
+  "itemGroup.integratedtunnels.integratedtunnels": "Integrated Tunnels",
+  "parttype.integratedtunnels.exporter_item.info": "Exports items from the network",
+  "parttype.integratedtunnels.importer_item.info": "Imports items into the network"
+}

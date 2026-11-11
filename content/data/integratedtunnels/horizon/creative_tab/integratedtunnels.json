@@ -1,0 +1,9 @@
+{
+  "icon": "integratedtunnels:tunnel_cable",
+  "items": [
+    "integratedtunnels:tunnel_cable",
+    "integratedtunnels:part_importer_item",
+    "integratedtunnels:part_exporter_item"
+  ],
+  "title": "Integrated Tunnels"
+}

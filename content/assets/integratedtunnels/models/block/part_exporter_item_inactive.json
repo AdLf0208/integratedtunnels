@@ -1,0 +1,148 @@
+{
+  "display": {
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        45,
+        0
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ],
+      "translation": [
+        0,
+        2,
+        0
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        45,
+        0
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ],
+      "translation": [
+        0,
+        2,
+        0
+      ]
+    },
+    "gui": {
+      "rotation": [
+        30,
+        45,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "translation": [
+        -4,
+        2,
+        0
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        10,
+        -45,
+        170
+      ],
+      "scale": [
+        0.375,
+        0.375,
+        0.375
+      ],
+      "translation": [
+        0,
+        1.5,
+        -2.75
+      ]
+    }
+  },
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#texture",
+          "uv": [
+            4.0,
+            0.0,
+            10.0,
+            4.0
+          ]
+        },
+        "east": {
+          "texture": "#texture",
+          "uv": [
+            0.0,
+            4.0,
+            4.0,
+            10.0
+          ]
+        },
+        "north": {
+          "texture": "#texture",
+          "uv": [
+            4.0,
+            4.0,
+            10.0,
+            10.0
+          ]
+        },
+        "south": {
+          "texture": "#texture",
+          "uv": [
+            4.0,
+            4.0,
+            10.0,
+            10.0
+          ]
+        },
+        "up": {
+          "texture": "#texture",
+          "uv": [
+            4.0,
+            10.0,
+            10.0,
+            14.0
+          ]
+        },
+        "west": {
+          "texture": "#texture",
+          "uv": [
+            10.0,
+            4.0,
+            14.0,
+            10.0
+          ]
+        }
+      },
+      "from": [
+        5.0,
+        5.0,
+        12.0
+      ],
+      "name": "one",
+      "to": [
+        11.0,
+        11.0,
+        16.0
+      ]
+    }
+  ],
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "integratedtunnels:part/exporter_item_inactive",
+    "texture": "integratedtunnels:part/exporter_item_inactive"
+  }
+}

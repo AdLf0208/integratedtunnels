@@ -1,0 +1,18 @@
+[package]
+# Ported from: Integrated Tunnels 1.13.0 (CyclopsMC/IntegratedTunnels, MIT),
+# Minecraft Java 1.21.1 NeoForge. Local-only until the maintainer approves
+# publishing; a published port travels under MIT with its copyright notice.
+name = "horizon-integratedtunnels"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+license = "MIT"
+description = "Integrated Tunnels for Horizon: item importer and exporter parts on a tunnel cable"
+
+[lib]
+# This exact source is also injected as a same-crate module by horizon-mixins.
+path = "mixins/integratedtunnels/runtime.rs"
+
+[workspace]
+members = []
+resolver = "2"

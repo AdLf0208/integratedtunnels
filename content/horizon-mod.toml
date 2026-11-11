@@ -1,0 +1,13 @@
+# Port-owned content mod for Integrated Tunnels 1.13.0 (MIT,
+# CyclopsMC/IntegratedTunnels): the tunnel cable carrier block, the Item
+# Importer and Item Exporter part items, their models, textures, lang and
+# loot. The network behaviour and the parts are the native half in
+# mixins/integratedtunnels.
+id = "integratedtunnels"
+name = "Integrated Tunnels"
+version = "0.1.0"
+description = "Item tunnels for Horizon: an Item Importer and an Item Exporter part on a tunnel cable."
+authors = ["rubensworks (aka kroeser)"]
+api = "0.2"
+side = "both"
+capabilities = ["registries"]

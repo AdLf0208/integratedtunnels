@@ -1,0 +1,245 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "integratedtunnels:block/tunnel_cable_core"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_importer_item_active",
+        "x": 270
+      },
+      "when": {
+        "part_down": "importer_item",
+        "status": "active"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_importer_item_inactive",
+        "x": 270
+      },
+      "when": {
+        "part_down": "importer_item",
+        "status": "inactive"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_importer_item_active",
+        "x": 90
+      },
+      "when": {
+        "part_up": "importer_item",
+        "status": "active"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_importer_item_inactive",
+        "x": 90
+      },
+      "when": {
+        "part_up": "importer_item",
+        "status": "inactive"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_importer_item_active",
+        "y": 180
+      },
+      "when": {
+        "part_north": "importer_item",
+        "status": "active"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_importer_item_inactive",
+        "y": 180
+      },
+      "when": {
+        "part_north": "importer_item",
+        "status": "inactive"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_importer_item_active"
+      },
+      "when": {
+        "part_south": "importer_item",
+        "status": "active"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_importer_item_inactive"
+      },
+      "when": {
+        "part_south": "importer_item",
+        "status": "inactive"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_importer_item_active",
+        "y": 90
+      },
+      "when": {
+        "part_west": "importer_item",
+        "status": "active"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_importer_item_inactive",
+        "y": 90
+      },
+      "when": {
+        "part_west": "importer_item",
+        "status": "inactive"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_importer_item_active",
+        "y": 270
+      },
+      "when": {
+        "part_east": "importer_item",
+        "status": "active"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_importer_item_inactive",
+        "y": 270
+      },
+      "when": {
+        "part_east": "importer_item",
+        "status": "inactive"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_exporter_item_active",
+        "x": 270
+      },
+      "when": {
+        "part_down": "exporter_item",
+        "status": "active"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_exporter_item_inactive",
+        "x": 270
+      },
+      "when": {
+        "part_down": "exporter_item",
+        "status": "inactive"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_exporter_item_active",
+        "x": 90
+      },
+      "when": {
+        "part_up": "exporter_item",
+        "status": "active"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_exporter_item_inactive",
+        "x": 90
+      },
+      "when": {
+        "part_up": "exporter_item",
+        "status": "inactive"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_exporter_item_active",
+        "y": 180
+      },
+      "when": {
+        "part_north": "exporter_item",
+        "status": "active"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_exporter_item_inactive",
+        "y": 180
+      },
+      "when": {
+        "part_north": "exporter_item",
+        "status": "inactive"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_exporter_item_active"
+      },
+      "when": {
+        "part_south": "exporter_item",
+        "status": "active"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_exporter_item_inactive"
+      },
+      "when": {
+        "part_south": "exporter_item",
+        "status": "inactive"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_exporter_item_active",
+        "y": 90
+      },
+      "when": {
+        "part_west": "exporter_item",
+        "status": "active"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_exporter_item_inactive",
+        "y": 90
+      },
+      "when": {
+        "part_west": "exporter_item",
+        "status": "inactive"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_exporter_item_active",
+        "y": 270
+      },
+      "when": {
+        "part_east": "exporter_item",
+        "status": "active"
+      }
+    },
+    {
+      "apply": {
+        "model": "integratedtunnels:block/part_exporter_item_inactive",
+        "y": 270
+      },
+      "when": {
+        "part_east": "exporter_item",
+        "status": "inactive"
+      }
+    }
+  ]
+}

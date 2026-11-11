@@ -1,0 +1,90 @@
+{
+  "default_state": {
+    "part_down": "none",
+    "part_east": "none",
+    "part_north": "none",
+    "part_south": "none",
+    "part_up": "none",
+    "part_west": "none",
+    "status": "inactive"
+  },
+  "item": true,
+  "properties": {
+    "explosion_resistance": 3.0,
+    "hardness": 3.0,
+    "occludes": false,
+    "render_shape": "MODEL",
+    "requires_tool": false,
+    "sounds": "minecraft:stone"
+  },
+  "shapes": {
+    "default": [
+      [
+        0.375,
+        0.375,
+        0.375,
+        0.625,
+        0.625,
+        0.625
+      ]
+    ]
+  },
+  "state_properties": {
+    "part_down": {
+      "type": "enum",
+      "values": [
+        "none",
+        "importer_item",
+        "exporter_item"
+      ]
+    },
+    "part_east": {
+      "type": "enum",
+      "values": [
+        "none",
+        "importer_item",
+        "exporter_item"
+      ]
+    },
+    "part_north": {
+      "type": "enum",
+      "values": [
+        "none",
+        "importer_item",
+        "exporter_item"
+      ]
+    },
+    "part_south": {
+      "type": "enum",
+      "values": [
+        "none",
+        "importer_item",
+        "exporter_item"
+      ]
+    },
+    "part_up": {
+      "type": "enum",
+      "values": [
+        "none",
+        "importer_item",
+        "exporter_item"
+      ]
+    },
+    "part_west": {
+      "type": "enum",
+      "values": [
+        "none",
+        "importer_item",
+        "exporter_item"
+      ]
+    },
+    "status": {
+      "type": "enum",
+      "values": [
+        "inactive",
+        "active"
+      ]
+    }
+  },
+  "template": "minecraft:stone"
+}
